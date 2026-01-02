@@ -1,0 +1,42 @@
+@use '@/styles/variables';
+
+.mapWrapper {
+    width: 100%;
+
+    h2 {
+        margin-bottom: 5rem;
+
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    svg {
+        circle[cx='96'][cy='13'],
+        circle[cx='90'][cy='21'],
+        circle[cx='48'][cy='28'],
+        circle[cx='26'][cy='24'],
+        circle[cx='89'][cy='21'],
+        circle[cx='133'][cy='48'] {
+            fill: variables.$color-primary;
+            opacity: 0;
+            animation: map-pulse 2s infinite ease-out;
+        }
+    }
+}
+
+.pulse {
+    fill: variables.$color-primary;
+    opacity: 0;
+    animation: map-pulse 2s infinite ease-out;
+}
+
+@keyframes map-pulse {
+    0% {
+        r: 0.5;
+        opacity: 0.8;
+    }
+    100% {
+        r: 4;
+        opacity: 0.1;
+    }
+}

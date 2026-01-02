@@ -1,5 +1,9 @@
 @use 'modern-normalize';
 
+* {
+    margin: 0;
+}
+
 html {
     scrollbar-gutter: stable;
     height: 100%;
