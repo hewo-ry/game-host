@@ -1,0 +1,5 @@
+{
+    "extends": "@hewo/typescript-config/nextjs.json",
+    "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "next.config.js", ".next/types/**/*.ts", "eslint.config.mts"],
+    "exclude": ["node_modules"]
+}
