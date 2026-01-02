@@ -30,10 +30,98 @@
 
 .page {
     display: flex;
-    justify-content: center;
-    align-items: center;
 
     min-height: 100vh;
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+
+        padding: 8rem 0;
+
+        img {
+            position: absolute;
+            top: -10rem;
+            left: 10rem;
+
+            mask-image: radial-gradient(circle, black 40%, transparent 70%);
+
+            z-index: -1;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            max-width: 25rem;
+
+            h1 {
+                font-size: 3rem;
+                text-transform: uppercase;
+            }
+
+            button {
+                padding: 1rem 2.5rem;
+
+                font-weight: 800;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+                border-radius: 8px;
+                background: transparent;
+                color: variables.$color-primary;
+                border: 2px solid variables.$color-primary;
+
+                animation: pulse-glow 3s infinite ease-in-out;
+
+                transition: all 0.3s ease;
+
+                overflow: hidden;
+
+                &:hover {
+                    animation: none;
+                    background: variables.$color-primary;
+                    color: variables.$color-bg-deep;
+                    box-shadow: 0 0 30px rgba(variables.$color-primary, 0.6);
+                    transform: translateY(-2px); // Pieni nousuefekti
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 50%;
+                    height: 100%;
+                    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+                    transition: 0.5s;
+                }
+
+                &:hover::before {
+                    left: 150%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(variables.$color-primary, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(variables.$color-primary, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(variables.$color-primary, 0.4);
+    }
 }
 
 .notFound {
