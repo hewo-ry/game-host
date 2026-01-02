@@ -30,6 +30,8 @@
 
 .page {
     display: flex;
+    flex-direction: column;
+    gap: 20rem;
 
     min-height: 100vh;
 

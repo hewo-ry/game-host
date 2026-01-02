@@ -1,6 +1,8 @@
 import Text from '@hewo/ui/text';
 import Image from 'next/image';
 
+import ServerMap from '@/components/map';
+
 import styles from './styles.module.scss';
 
 const Page = () => (
@@ -24,6 +26,8 @@ const Page = () => (
                 </button>
             </div>
         </div>
+
+        <ServerMap />
     </div>
 );
 
