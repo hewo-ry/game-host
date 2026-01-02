@@ -1,0 +1,87 @@
+@use '@/styles/mixins';
+@use '@/styles/variables';
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 5rem;
+
+    border-bottom: 1px solid rgba(variables.$color-primary, 0.1);
+
+    nav {
+        display: flex;
+
+        padding: 0 2rem;
+
+        @include mixins.respond-to(lg) {
+            padding: 0;
+        }
+
+        .logo {
+            padding: 2rem 10rem 2rem 0;
+
+            color: variables.$color-primary;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 2rem;
+
+            width: 100%;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            li {
+                position: relative;
+                padding: 2rem 0;
+
+                a {
+                    color: variables.$color-text-muted;
+                    text-decoration: none;
+
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: variables.$color-primary;
+                    }
+                }
+
+                .submenu {
+                    display: none;
+
+                    position: absolute;
+                    top: 100%;
+                    left: -1rem;
+
+                    min-width: 10rem;
+
+                    padding: 1rem;
+
+                    background: variables.$color-bg-card;
+                    border: 1px solid rgba(variables.$color-primary, 0.2);
+                    border-radius: 8px;
+                    list-style: none;
+                    box-shadow: variables.$box-shadow;
+
+                    li {
+                        padding: 0.5rem 0;
+                    }
+                }
+
+                &:hover {
+                    color: variables.$color-primary;
+
+                    .submenu {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ const config: Config = {
 
     plugins: ['@trivago/prettier-plugin-sort-imports'],
 
-    importOrder: ['^((react)(.*)$)|^((react)$)', '<THIRD_PARTY_MODULES>', '^[./]'],
+    importOrder: ['^((react)(.*)$)|^((react)$)', '<THIRD_PARTY_MODULES>', '^@/', '^[./]'],
     importOrderSeparation: true,
     importOrderSortSpecifiers: true,
 };
