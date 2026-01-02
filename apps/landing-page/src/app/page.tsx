@@ -1,4 +1,3 @@
-import Text from '@hewo/ui/text';
 import Image from 'next/image';
 
 import ServerMap from '@/components/map';
