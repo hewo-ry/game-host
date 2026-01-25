@@ -1,5 +1,6 @@
 @use '@/styles/mixins';
 @use '@/styles/variables';
+@use './animations.scss';
 
 .layout {
     width: 100%;
@@ -42,14 +43,68 @@
 
         padding: 8rem 0;
 
-        img {
+        .image {
             position: absolute;
             top: -10rem;
             left: 10rem;
 
-            mask-image: radial-gradient(circle, black 40%, transparent 70%);
-
             z-index: -1;
+
+            img {
+                mask-image: radial-gradient(circle, black 40%, transparent 70%);
+            }
+
+            .dot1_a {
+                @include animations.dot(127px, 267px, 300px, 345px, #124946, #29f9b6, 30%, 39%);
+            }
+            .dot1_b {
+                @include animations.dot(380px, 400px, 412px, 415px, #1bfdb6, #19f69f, 43%, 46%);
+            }
+            .dot1_c {
+                @include animations.dot(412px, 415px, 413px, 462px, #19f69f, #1bfdb6, 46%, 49%);
+            }
+            .dot1_d {
+                @include animations.dot(413px, 462px, 440px, 476px, #1bfdb6, #19f69f, 49%, 51%);
+            }
+
+            .dot2_a {
+                @include animations.dot(161px, 260px, 297px, 320px, #124946, #29f9b6, 60%, 70%);
+            }
+            .dot2_b {
+                @include animations.dot(409px, 380px, 454px, 399px, #1ffaae, #22f9ae, 74%, 77%);
+            }
+            .dot2_c {
+                @include animations.dot(454px, 399px, 454px, 418px, #22f9ae, #1ef998, 77%, 78%);
+            }
+            .dot2_d {
+                @include animations.dot(454px, 418px, 465px, 422px, #1ef998, #20e5ce, 78%, 79%);
+            }
+
+            .dot3_a {
+                @include animations.dot(869px, 259px, 737px, 320px, #124946, #29f9b6, 20%, 26%);
+            }
+            .dot3_b {
+                @include animations.dot(623px, 352px, 552px, 385px, #1ffaae, #22f9ae, 29%, 33%);
+            }
+            .dot3_c {
+                @include animations.dot(552px, 385px, 551px, 418px, #22f9ae, #1ef998, 33%, 34.5%);
+            }
+            .dot3_d {
+                @include animations.dot(552px, 421px, 532px, 430px, #1ef998, #20e5ce, 34.5%, 36%);
+            }
+
+            .dot4_a {
+                @include animations.dot(900px, 268px, 742px, 342px, #124946, #29f9b6, 40%, 46%);
+            }
+            .dot4_b {
+                @include animations.dot(652px, 391px, 599px, 415px, #1ffaae, #22f9ae, 49%, 52%);
+            }
+            .dot4_c {
+                @include animations.dot(599px, 415px, 598px, 493px, #22f9ae, #1ef998, 52%, 55%);
+            }
+            .dot4_d {
+                @include animations.dot(598px, 493px, 539px, 519px, #1ef998, #20e5ce, 55%, 58%);
+            }
         }
 
         .content {
